@@ -9,38 +9,39 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    private Driver(){}
+    private Driver() {
+    }
 
     private static WebDriver driver;
 
-    public static  WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if (driver==null){
+        if (driver == null) {
 
             String browserType = ConfigurationReader.getProperty("browser");
 
-            switch (browserType){
+            switch (browserType) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver=new ChromeDriver();
+                    driver = new ChromeDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-              /*  case "edge":
+                case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-                    break; */
+                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
             }
 
         }
         return driver;
     }
 
-    public static void closeDriver(){
-        if (driver!=null){
+    public static void closeDriver() {
+        if (driver != null) {
             driver.quit();
-            driver=null;
+            driver = null;
         }
     }
 

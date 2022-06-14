@@ -14,7 +14,7 @@ public class DropDownTask {
 
 
     @BeforeMethod
-    public void setup(){
+    public void setup() {
 
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
         Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
@@ -23,9 +23,8 @@ public class DropDownTask {
 
     }
 
-
     @Test
-    public void test1(){
+    public void test1() {
 
         Driver.getDriver().findElement(By.xpath("//a[.='Order']")).click();
         WebElement dropDownElement = Driver.getDriver().findElement(By.xpath("//select[@id='ctl00_MainContent_fmwOrder_ddlProduct']"));
@@ -33,12 +32,12 @@ public class DropDownTask {
 
         String expectedValue = "MyMoney";
         String actualValue = dropDown.getFirstSelectedOption().getText();
-        Assert.assertEquals(actualValue,expectedValue,"Default Option Test Failed");
+        Assert.assertEquals(actualValue, expectedValue, "Default Option Test Failed");
 
         dropDown.selectByVisibleText("FamilyAlbum");
         BrowserUtils.sleep(2);
 
-        Assert.assertEquals(dropDown.getFirstSelectedOption().getText(),"FamilyAlbum");
+        Assert.assertEquals(dropDown.getFirstSelectedOption().getText(), "FamilyAlbum");
 
         WebElement quantityBox = Driver.getDriver().findElement(By.xpath("//input[@id='ctl00_MainContent_fmwOrder_txtQuantity']"));
 
@@ -48,6 +47,5 @@ public class DropDownTask {
         Driver.getDriver().findElement(By.xpath("//input[@value='Calculate']")).click();
 
     }
-
 
 }
