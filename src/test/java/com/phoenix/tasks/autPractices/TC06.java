@@ -1,4 +1,4 @@
-package com.phoenix.tasks.AutPractices;
+package com.phoenix.tasks.autPractices;
 
 import com.github.javafaker.Faker;
 import com.phoenix.pages.AutomationContactPage;

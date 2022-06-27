@@ -1,4 +1,4 @@
-package com.phoenix.tasks.AutPractices;
+package com.phoenix.tasks.autPractices;
 
 import com.phoenix.pages.AutomationMainPage;
 import com.phoenix.utilities.BrowserUtils;

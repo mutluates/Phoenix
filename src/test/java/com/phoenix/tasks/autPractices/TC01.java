@@ -1,4 +1,4 @@
-package com.phoenix.tasks.AutPractices;
+package com.phoenix.tasks.autPractices;
 
 public class TC01 {
 

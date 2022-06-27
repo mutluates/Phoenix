@@ -1,4 +1,4 @@
-package com.phoenix.tasks.SmartBearSoftware;
+package com.phoenix.tasks.smartBearSoftware;
 
 import com.phoenix.utilities.BrowserUtils;
 import com.phoenix.utilities.Driver;
